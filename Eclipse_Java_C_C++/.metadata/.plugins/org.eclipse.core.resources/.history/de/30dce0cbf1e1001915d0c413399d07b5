@@ -1,0 +1,10 @@
+package papetri;
+
+public class RamettePapper extends Article {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

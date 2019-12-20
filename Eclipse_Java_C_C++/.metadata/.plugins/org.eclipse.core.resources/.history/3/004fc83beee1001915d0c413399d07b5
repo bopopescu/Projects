@@ -1,0 +1,29 @@
+package papetri;
+
+public class Article {
+
+	
+	public int reference;
+	public String dexriptif;
+	public String marque;
+	private double prix;
+	 
+	
+	Article ( int reference, String dexriptif, String marque, double prix)
+	 {
+		 this.reference=reference ;
+		 this.dexriptif= dexriptif;
+		 this.marque=marque;
+		 this.prix= prix;
+		 
+	 }
+	
+	public double getPrix() 
+	{return prix; 
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

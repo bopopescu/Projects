@@ -1,0 +1,18 @@
+package serverClient;
+
+import java.net.ServerSocket;
+
+public class Server  {
+
+	private static  ServerSocket server = null;
+	static int port ;
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		server = newServerSocket(port) ;
+		server.accept() ;
+	}
+
+}

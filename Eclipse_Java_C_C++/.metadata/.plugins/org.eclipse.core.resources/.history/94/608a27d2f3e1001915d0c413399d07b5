@@ -1,0 +1,5 @@
+package papetri;
+
+public interface IFacturable {
+
+}

@@ -1,0 +1,26 @@
+package serverClient;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class Server  {
+
+	private static  ServerSocket server = null;
+	static int port ;
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+	ServerSocket server = new ServerSocket(12345) ;
+		server.accept() ;
+		
+		System.out.println("Demand reçue");
+		}
+		catch (IOException ioe) {}
+		
+
+	}
+
+}

@@ -1,0 +1,103 @@
+package serverClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Server  {
+
+  private static Map<String , ServerThread > clients = new HashMap<String, ServerThread>(); 
+
+
+
+
+
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+	ServerSocket server = null;
+	BufferedReader BufReader = null;
+	String str = null;
+	try {
+		server = new ServerSocket(12345);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	
+	while(true){
+	try {
+	Socket client	= server.accept() ;
+		ServerThread thread= new ServerThread (client) ;
+				
+		System.out.println("Demand reçue");
+		
+		thread.start();
+		clients.put(client.getInetAddress().toString() + ":"+client.getPort(),thread);
+		
+		System.out.println("client num" + clients.size()+ " accecpted " + client);
+		System.out.println("Boucle for:");
+        for (Map.Entry mapentry : clients.entrySet()) {
+        	System.out.println("clé : "  +mapentry.getKey() + " | valeur: " + mapentry.getValue());
+        }
+	
+		} 
+	
+	
+		
+		catch (IOException ioe) {}
+		
+
+	}
+	}
+}
+
+
+class ServerThread extends Thread {
+	
+	private BufferedReader	streamIn =null;
+	public ServerThread(Socket client)
+	{
+		
+		try {
+				streamIn = new BufferedReader(new InputStreamReader(client.getInputStream()));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+	}
+	
+	public void run ()
+	{
+		boolean running=true;
+	while(running)
+	{try {
+
+
+		String str = streamIn.readLine();
+		if (str!=null)
+		System.out.println(str);
+		else 
+			
+			running=false; 
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		running=false; 
+	}
+	}
+	}
+}
+
+

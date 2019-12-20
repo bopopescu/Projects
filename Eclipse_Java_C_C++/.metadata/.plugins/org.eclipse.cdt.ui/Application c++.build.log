@@ -1,0 +1,14 @@
+15:35:30 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x10): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$.refptr._ZTV8Personne[.refptr._ZTV8Personne]+0x0): undefined reference to `vtable for Personne'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x10): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+
+15:35:39 Build Finished. 0 errors, 0 warnings. (took 8s.911ms)
+

@@ -1,0 +1,197 @@
+10:56:56 **** Build of configuration Debug for project Pharma applicaton ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jre1.8.0_231/bin/server;C:/Program Files/Java/jre1.8.0_231/bin;C:/Program Files/Java/jre1.8.0_231/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\webdriver\chromedriver_win32;C:\Program Files\Java\jdk-13\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\CMake\bin;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\;C:\Program Files\Java\jdk-13\bin;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files (x86)\CppUTest;C:\Users\DELL\Downloads\eclipse-cpp-2019-09-R-win32-x86_64\eclipse]
+10:57:34 **** Clean-only build of configuration Debug for project Pharma applicaton ****
+make clean 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jre1.8.0_231/bin/server;C:/Program Files/Java/jre1.8.0_231/bin;C:/Program Files/Java/jre1.8.0_231/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\webdriver\chromedriver_win32;C:\Program Files\Java\jdk-13\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\CMake\bin;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\;C:\Program Files\Java\jdk-13\bin;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files (x86)\CppUTest;C:\Users\DELL\Downloads\eclipse-cpp-2019-09-R-win32-x86_64\eclipse]
+10:57:41 **** Build of configuration Debug for project Pharma applicaton ****
+make all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:/Program Files/Java/jre1.8.0_231/bin/server;C:/Program Files/Java/jre1.8.0_231/bin;C:/Program Files/Java/jre1.8.0_231/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\webdriver\chromedriver_win32;C:\Program Files\Java\jdk-13\bin;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\CMake\bin;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\DELL\AppData\Local\Programs\Python\Python37-32\;C:\Program Files\Java\jdk-13\bin;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin;C:\Program Files (x86)\CppUTest;C:\Users\DELL\Downloads\eclipse-cpp-2019-09-R-win32-x86_64\eclipse]
+11:02:21 **** Rebuild of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" 
+Info: Nothing to build for Application c++
+11:54:18 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+15:09:29 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+In file included from ..\src\Client.h:11,
+                 from ..\src\Client.cpp:8:
+..\src\Personne.h:32:15: error: 'virtual void Personne::display()' cannot be overloaded with 'void Personne::display()'
+  virtual void display();
+               ^~~~~~~
+..\src\Personne.h:24:7: note: previous declaration 'void Personne::display()'
+  void display ();
+       ^~~~~~~
+..\src\Client.cpp: In constructor 'Client::Client(std::__cxx11::string, std::__cxx11::string, int, int)':
+..\src\Client.cpp:14:1: warning: 'Client::phonenumber' is initialized with itself [-Winit-self]
+ Client::Client(string firstname,string secondname, int password,int phonenumbr) :Personne( firstname, secondname, password), phonenumber (phonenumber){
+ ^~~~~~
+15:11:16 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+In file included from ..\src\Application c++.cpp:10:
+..\src\Personne.h:32:7: error: 'void Personne::display()' cannot be overloaded with 'void Personne::display()'
+  void display();
+       ^~~~~~~
+..\src\Personne.h:24:7: note: previous declaration 'void Personne::display()'
+  void display ();
+       ^~~~~~~
+15:12:53 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+In file included from ..\src\Personne.cpp:8:
+..\src\Personne.h:32:15: error: 'virtual void Personne::display()' cannot be overloaded with 'void Personne::display()'
+  virtual void display();
+               ^~~~~~~
+..\src\Personne.h:24:7: note: previous declaration 'void Personne::display()'
+  void display ();
+       ^~~~~~~
+..\src\Personne.cpp: In constructor 'Personne::Personne()':
+..\src\Personne.cpp:10:91: error: invalid conversion from 'const char*' to 'int' [-fpermissive]
+ Personne::Personne(): firstname("firstname"),secondname("secondname"), password("password") {
+                                                                                           ^
+15:13:04 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+..\src\Client.cpp: In constructor 'Client::Client(std::__cxx11::string, std::__cxx11::string, int, int)':
+..\src\Client.cpp:14:1: warning: 'Client::phonenumber' is initialized with itself [-Winit-self]
+ Client::Client(string firstname,string secondname, int password,int phonenumbr) :Personne( firstname, secondname, password), phonenumber (phonenumber){
+ ^~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+..\src\Personne.cpp: In constructor 'Personne::Personne()':
+..\src\Personne.cpp:10:91: error: invalid conversion from 'const char*' to 'int' [-fpermissive]
+ Personne::Personne(): firstname("firstname"),secondname("secondname"), password("password") {
+                                                                                           ^
+15:13:18 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+..\src\Application c++.cpp: In function 'int main()':
+..\src\Application c++.cpp:24:8: warning: 'response' is used uninitialized in this function [-Wuninitialized]
+  cin >>response;
+        ^~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+..\src\Personne.cpp: In constructor 'Personne::Personne()':
+..\src\Personne.cpp:10:91: error: invalid conversion from 'const char*' to 'int' [-fpermissive]
+ Personne::Personne(): firstname("firstname"),secondname("secondname"), password("password") {
+                                                                                           ^
+15:13:51 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display()'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+15:14:02 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display()'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+15:17:32 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+..\src\Application c++.cpp: In function 'int main()':
+..\src\Application c++.cpp:24:8: warning: 'response' is used uninitialized in this function [-Wuninitialized]
+  cin >>response;
+        ^~~~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+..\src\Client.cpp: In constructor 'Client::Client(std::__cxx11::string, std::__cxx11::string, int, int)':
+..\src\Client.cpp:14:1: warning: 'Client::phonenumber' is initialized with itself [-Winit-self]
+ Client::Client(string firstname,string secondname, int password,int phonenumbr) :Personne( firstname, secondname, password), phonenumber (phonenumber){
+ ^~~~~~
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Personne::display()'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display()'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+15:22:14 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+..\src\Client.cpp: In constructor 'Client::Client(std::__cxx11::string, std::__cxx11::string, int, int)':
+..\src\Client.cpp:14:1: warning: 'Client::phonenumber' is initialized with itself [-Winit-self]
+ Client::Client(string firstname,string secondname, int password,int phonenumbr) :Personne( firstname, secondname, password), phonenumber (phonenumber){
+ ^~~~~~
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display() const'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display() const'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Personne::display() const'
+collect2.exe: error: ld returned 1 exit status
+15:23:11 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display() const'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display() const'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Personne::display() const'
+collect2.exe: error: ld returned 1 exit status
+15:28:06 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Personne::display() const'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display() const'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Personne::display() const'
+collect2.exe: error: ld returned 1 exit status
+15:28:33 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display()'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+15:34:27 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x20): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$_ZTV8Personne[_ZTV8Personne]+0x20): undefined reference to `Personne::display()'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x20): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status
+15:34:48 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+15:35:30 **** Incremental Build of configuration Debug for project Application c++ ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Application c++.o" "..\\src\\Application c++.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Personne.o" "..\\src\\Personne.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pharmacie.o" "..\\src\\Pharmacie.cpp" 
+g++ -o "Application c++.exe" "src\\Application c++.o" "src\\Client.o" "src\\Personne.o" "src\\Pharmacie.o" 
+src\Client.o:Client.cpp:(.rdata$_ZTV6Client[_ZTV6Client]+0x10): undefined reference to `Client::display()'
+src\Personne.o:Personne.cpp:(.rdata$.refptr._ZTV8Personne[.refptr._ZTV8Personne]+0x0): undefined reference to `vtable for Personne'
+src\Pharmacie.o:Pharmacie.cpp:(.rdata$_ZTV9Pharmacie[_ZTV9Pharmacie]+0x10): undefined reference to `Pharmacie::display()'
+collect2.exe: error: ld returned 1 exit status

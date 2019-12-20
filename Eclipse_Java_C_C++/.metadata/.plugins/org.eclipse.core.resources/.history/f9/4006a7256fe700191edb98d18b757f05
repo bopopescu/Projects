@@ -1,0 +1,39 @@
+package serverClient;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import  java.io.PrintWriter; 
+
+public class Client {
+
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  boolean running =true;
+  int i = 0 ; 
+		try {
+			Socket s = new Socket ("localhost",12345);
+			PrintWriter out  =  new PrintWriter(s.getOutputStream());
+			//System.out.print(out);
+			
+			While(running)
+			{
+			out.write("bonjour!!!!!\n");
+			out.flush();
+			System.out.println ("j envoie le bonjour n " + i++);
+			
+		}
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		running =false ; 
+	}
+
+	
+}
