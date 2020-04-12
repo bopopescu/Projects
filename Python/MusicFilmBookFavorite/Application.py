@@ -1,33 +1,87 @@
 from PyQt5.QtWidgets import *
 import sys
 import mysql.connector
-
-def on_button_clicked():
-    alert = QMessageBox()
-    if username.text() == "maryem" and password.text() == "21826041":
-        alert.setText('logged successfully')
+class Dialog():
+    def save_to_table(selfself):
+        alert = QMessageBox()
+        alert.setText("saved to database")
         alert.exec_()
-        window.hide()
+
+
+    def signup_button_clicked(self):
+        #alert = QMessageBox()
+        if QMessageBox.ActionRole == 3:
+            window2.show()
+            #alert.exec_()
+    def button_healthcare(self):
+        medicaments_database = mysql.connector.connect(host='localhost', database='FilmMusicBookApplication',user='root', password='21826041')
+        mycursor = medicaments_database.cursor()
+        mycursor.execute("SHOW TABLES")
+        table_medicaments.setItem(2,2, QTableWidgetItem("111111111111111"))
+        table_medicaments.setItem(2, 1, QTableWidgetItem("hello"))
+     
+
+    def save_button_clicked(self):
+        alert = QMessageBox()
+        alert.setText("saved to database")
+        if username1.text() != 0 and password1.text != 0 and password1.text() ==password11.text() :
+            dialog.myconn_to_database()
+            username1.clear()
+            password1.clear()
+            password11.clear()
+            window2.hide()
+            alert.exec_()
+        else :
+            alert.setText('enter a new username and a new password')
+            alert.exec()
+    def on_button_clicked(self):
+        alert = QMessageBox()
+        database = mysql.connector.connect(host='localhost', database='FilmMusicBookApplication', user='root', password='21826041')
+        mycursor = database.cursor()
+        query = 'SELECT * FROM users'
+        mycursor.execute(query)
+        records = mycursor.fetchall()
+        for c in records:
+            if passwordlogin.text() == c[2] and username.text() == c[1]:
+                nb=1
+        if nb==1:
+            alert.setText('logged successfully')
+            alert.exec_()
+            window.hide()
+            Menu.show()
+        else :
+            alert.setText('wrong username or password !!! Please enter a new login')
+            alert.exec()
+
+
+    def myconn_to_database(self):
+        mydb=mysql.connector.connect(host='localhost',database='mysql',user='root',password='21826041')
+        mycursor = mydb.cursor()
+        mycursor.execute("CREATE DATABASE IF NOT exists users")
+        mycursor.execute("CREATE DATABASE IF NOT exists FilmMusicBookApplication" )
+        mycursor.execute("SHOW DATABASES")
+        database=mysql.connector.connect(host='localhost',database='FilmMusicBookApplication',user='root',password='21826041')
+        mycursor=database.cursor()
+        #mycursor.execute("DROP TABLE USERS")
+        #table = mycursor.execute("CREATE TABLE USERS (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,name VARCHAR(255), password VARCHAR(255), confirmpassword VARCHAR(255))")
+        query="INSERT INTO USERS (name, password, confirmpassword) VALUES (%s, %s, %s)"
+        #val = (username1.text(), password1.text(), password11.text())
+        val = (username1.text(), password1.text(), password11.text())
+        #val = ("maryem", "21826041", "21826041")
+        mycursor.execute(query,val)
+        database.commit()
+        query = "SELECT * FROM USERS"
+        mycursor.execute(query)
+        records = mycursor.fetchall()
+    def my_medications(self):
+        windwos_medicaments.show()
+    def movies(self):
         window1.show()
-    else :
-        alert.setText('wrong username or password !!! Please enter a new login')
-        alert.exec()
-def myconn_to_database():
-    mydb=mysql.connector.connect(host='localhost',database='mysql',user='root',password='21826041')
-    print(mydb)
-    mycursor = mydb.cursor()
-    mycursor.execute("CREATE DATABASE IF NOT exists users")
-    mycursor.execute("CREATE DATABASE IF NOT exists FilmMusicBookApplication" )
-    mycursor.execute("SHOW DATABASES")
-    for x in mycursor:
-        print(x)
-    database=mysql.connector.connect(host='localhost',database='FilmMusicBookApplication',user='root',password='21826041')
+
+
 
 if __name__ == '__main__':
-  # mydb = mysql.connector.connect(host='localhost', database='mysql', user='root', password='21826041')
-   # mycursor = mydb.cursor()
- #   mydb1 = mysql.connector.connect(host='localhost', user='root', password='21826041', database='myschool')
-    myconn_to_database()
+    dialog=Dialog()
     app = QApplication([])
     window = QWidget()
     layout = QVBoxLayout()
@@ -36,13 +90,56 @@ if __name__ == '__main__':
     username=QLineEdit()
     layout.addWidget(username)
     layout.addWidget(QLabel('password'))
-    password=QLineEdit()
-    layout.addWidget(password)
+    passwordlogin=QLineEdit()
+    passwordlogin.setEchoMode(QLineEdit.Password)
+    layout.addWidget(passwordlogin)
     window.setLayout(layout)
     button=QPushButton('login')
     layout.addWidget(button)
-    button.clicked.connect(on_button_clicked)
+    button1=QPushButton("sign up")
+    layout.addWidget(button1)
+    button.clicked.connect(dialog.on_button_clicked)
     window.show()
+    button1.clicked.connect(dialog.signup_button_clicked)
+    window2 = QWidget()
+    layout = QVBoxLayout()
+    layout.addWidget(QLabel('username'))
+    username1 = QLineEdit()
+    layout.addWidget(username1)
+    layout.addWidget(QLabel('password'))
+    password1 = QLineEdit()
+    password1.setEchoMode(QLineEdit.Password)
+    layout.addWidget(password1)
+    layout.addWidget(QLabel('confirm password'))
+    password11 = QLineEdit()
+    password11.setEchoMode(QLineEdit.Password)
+    layout.addWidget(password11)
+    button = QPushButton('Save')
+    layout.addWidget(button)
+    button.clicked.connect(dialog.save_button_clicked)
+    window2.setLayout(layout)
+    Menu=QWidget()
+    layout = QVBoxLayout()
+    my_medications = QPushButton('my healthcare')
+    movies = QPushButton('movies')
+    playlist = QPushButton('my playlist')
+    good_plan = QPushButton('my good plan')
+    my_courses = QPushButton('my courses')
+    job_news = QPushButton('my job news')
+    recipe = QPushButton('my recipes')
+    calendar = QPushButton('my calendar')
+    layout.addWidget(my_medications)
+    layout.addWidget(movies)
+    layout.addWidget(playlist)
+    layout.addWidget(good_plan)
+    layout.addWidget(my_courses)
+    layout.addWidget(job_news)
+    layout.addWidget(recipe)
+    layout.addWidget(calendar)
+    Menu.setLayout(layout)
+    Menu.resize(500,500)
+    my_medications.clicked.connect(dialog.my_medications)
+    movies.clicked.connect(dialog.movies)
     window1=QWidget()
     tab1=QTableWidget(10,5)
     layout=QHBoxLayout()
@@ -52,6 +149,24 @@ if __name__ == '__main__':
     tab1.setItem( 0 ,  2 , QTableWidgetItem ( "type" ))
     tab1.setItem(0, 3, QTableWidgetItem("Author"))
     tab1.setItem(0, 4, QTableWidgetItem("watch_nbre"))
+    tab1.setItem(1,0, QTableWidgetItem ("film"))
+    tab1.setItem(1,1,QTableWidgetItem("Juste un peu d'alchimie"))
+    tab1.setItem(1,2,QTableWidgetItem("comedie"))
+    tab1.setItem(1,3,QTableWidgetItem("Alfonso Albacete"))
+    tab1.setItem(1,4,QTableWidgetItem("1"))
+    button = QPushButton('Save')
+    layout.addWidget(button)
+    button.clicked.connect(dialog.save_to_table)
     window1.setLayout(layout)
+    windwos_medicaments=QWidget()
+    layout=QHBoxLayout()
+    table_medicaments=QTableWidget(10,3)
+    layout.addWidget(table_medicaments)
+    table_medicaments.setItem(0, 0, QTableWidgetItem("Healthcare"))
+    table_medicaments.setItem(0, 1, QTableWidgetItem("when"))
+    table_medicaments.setItem(0, 2, QTableWidgetItem("manual use"))
+    button_healthcare = QPushButton('Save')
+    layout.addWidget(button_healthcare)
+    button_healthcare.clicked.connect(dialog.button_healthcare)
+    windwos_medicaments.setLayout(layout)
     sys.exit(app.exec_())
-
